@@ -1,16 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import "tailwindcss";
 
 :root {
+  --background: #ffcf79;
+  --foreground: #ededed;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --sans: "Inter", system-ui, "Segoe UI", sans-serif;
+  --heading: "Playfair Display", sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 }
-
+@theme inline {
+  --color-primary: var(--background);
+  --font-playfair: "Playfair Display", sans-serif;
+}
 body {
   margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -20,12 +31,10 @@ h2 {
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
+  font-size: 57.6px;
+  font-style: italic;
   @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+    font-size: 61.62px;
   }
 }
 h2 {
@@ -39,4 +48,12 @@ h2 {
 }
 p {
   margin: 0;
+}
+.heading-h1 {
+  font-size: 80px;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  @media (max-width: 768px) {
+    font-size: 64px;
+  }
 }
