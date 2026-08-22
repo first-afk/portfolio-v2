@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
+import { Carousel } from "./ui/carousel";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -40,7 +41,7 @@ const Hero = () => {
       <section
         ref={heroRef}
         id="hero"
-        className="relative z-10 min-h-dvh w-full border border-transparent px-10 py-10"
+        className="relative z-10 min-h-dvh w-full border border-transparent px-10 py-10 space-y-5 "
       >
         <div className="flex justify-between items-start">
           <div className="flex max-md:flex-col md:gap-2 md:items-center justify-center">
@@ -64,20 +65,22 @@ const Hero = () => {
         <div className="py-10 md:w-2/3">
           <h1 className="leading-[1.05] tracking-tight font-playfair">
             Building <span className="text-primary">design-led</span> digital
-            products{" "}
+            products
             <span className="inline-flex items-center justify-center ml-2 ">
               {" "}
-              <Sparkles className="size-12 mr-3" />
+              <Sparkles className="size-12 mr-3 max-sm:hidden" />
               one at a time.
-            </span>{" "}
+            </span>
           </h1>
         </div>
-        <div className="carousel"></div>
+        <div className="md:mt-36 mt-15">
+          <Carousel />
+        </div>
       </section>
-      <div className="video absolute inset-0 bg-slate-950">
+      <div className="video absolute inset-0 z-0">
         <video
           ref={videoRef}
-          className="w-full h-dvh absolute inset-0  object-cover"
+          className="absolute inset-0 z-0 h-dvh w-full object-cover"
           muted
           playsInline
           preload="auto"
@@ -94,6 +97,10 @@ const Hero = () => {
           />
           <source src="/videos/meadow-optimized.mp4" type="video/mp4" />
         </video>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-1/3 bg-linear-to-t from-black/90 via-black/50 to-transparent"
+        />
       </div>
     </>
   );
