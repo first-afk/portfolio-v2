@@ -15,6 +15,11 @@
   --color-primary: var(--background);
   --font-playfair: "Playfair Display", sans-serif;
 }
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
 body {
   margin: 0;
   background-color: var(--background);

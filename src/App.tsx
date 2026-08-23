@@ -1,12 +1,16 @@
 import gsap from "gsap";
-import Hero from "./components/Hero";
 import { ScrollTrigger } from "gsap/all";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Scroll from "./util/Scroll";
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
   return (
-    <main className="overflow-x-hidden">
-      <Hero />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Scroll />} />
+        <Route path="/works" element={<Scroll />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
