@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { testimonial } from "../../data";
+import { testimonial } from "../data";
 
 export function Carousel() {
   const isLargeScreen = useMediaQuery({ minWidth: 768 });

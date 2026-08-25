@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffcf79;
-  --foreground: #ededed;
+  --background: #feca70;
+  --foreground: #381303;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -19,49 +19,131 @@
   html {
     @apply scroll-smooth;
   }
-}
-body {
-  margin: 0;
-  background-color: var(--background);
-  color: var(--foreground);
-  min-height: 100svh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-}
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100svh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-h1 {
-  font-size: 57.6px;
-  font-style: italic;
-  @media (max-width: 1024px) {
-    font-size: 61.62px;
+  h1,
+  h2 {
+    font-family: var(--heading);
+    font-weight: 500;
   }
-  @media (max-width: 568px) {
-    font-size: 40px;
+
+  .heading-h1 {
+    font-size: 57.6px;
+    font-style: italic;
+    @media (max-width: 1024px) {
+      font-size: 61.62px;
+    }
+    @media (max-width: 568px) {
+      font-size: 40px;
+    }
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
+  .heading-h2 {
+    font-size: 24px;
+    line-height: 118%;
+    letter-spacing: -0.24px;
+    margin: 0 0 8px;
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
   }
-}
-p {
-  margin: 0;
-}
-.heading-h1 {
-  font-size: 80px;
-  line-height: 1.05;
-  letter-spacing: 0.01em;
-  @media (max-width: 768px) {
-    font-size: 64px;
+  p {
+    margin: 0;
+  }
+  /* .heading-h1 {
+    font-size: 80px;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    @media (max-width: 768px) {
+      font-size: 64px;
+    }
+  } */
+
+  .scrapbook-wrapper {
+    position: relative;
+    width: 500px;
+    height: 40rem;
+  }
+
+  .tape-graphic {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    opacity: 90%;
+  }
+
+  .clip-graphic {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    z-index: 10;
+  }
+
+  .torn-paper-container {
+    position: relative;
+    height: 40rem;
+    width: 80%;
+
+    /* The SVG mask that creates the jagged edges */
+    -webkit-mask-image: url("/images/Subtract3.svg");
+    mask-image: url("/images/Subtract3.svg");
+
+    /* Ensure the mask covers the whole div */
+    mask-size: 100% auto;
+    mask-repeat: no-repeat;
+  }
+  .torn-image-container {
+    overflow: hidden;
+    height: 200px;
+    width: 300px;
+    -webkit-mask-image: url("/images/image-subtract.svg");
+    mask-image: url("/images/image-subtract.svg");
+
+    mask-size: 100% auto;
+    mask-repeat: no-repeat;
+  }
+
+  .torn-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #works {
+    background-image: radial-gradient(#f04e091a 2px, transparent 1px);
+    background-size: 25px 25px;
+  }
+  .title {
+    animation:
+      typing 3.5s steps(16) forwards,
+      blink 0.9s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 16ch;
+    } /* Match '16ch' to the exact number of characters */
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--foreground);
+    }
   }
 }
