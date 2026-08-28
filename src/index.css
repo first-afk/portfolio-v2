@@ -37,6 +37,9 @@
     font-weight: 500;
   }
 
+  p {
+    margin: 0;
+  }
   .heading-h1 {
     font-size: 57.6px;
     font-style: italic;
@@ -46,18 +49,6 @@
     @media (max-width: 568px) {
       font-size: 40px;
     }
-  }
-  .heading-h2 {
-    font-size: 24px;
-    line-height: 118%;
-    letter-spacing: -0.24px;
-    margin: 0 0 8px;
-    @media (max-width: 1024px) {
-      font-size: 20px;
-    }
-  }
-  p {
-    margin: 0;
   }
 
   .tape-graphic {
@@ -78,16 +69,18 @@
     width: 100%;
     height: 100%;
 
-    mask-image: url("/images/Subtract2.svg");
+    mask-image: url("/images/Subtract3.svg");
 
-    mask-size: auto auto;
+    mask-size: auto 100%;
     mask-repeat: no-repeat;
     mask-position: center;
+    @media (max-width: 768px) {
+      mask-size: auto auto;
+    }
   }
 
   .work-card {
     width: 100%;
-    /* max-width: 24rem; */
     height: 470px;
   }
 
@@ -99,7 +92,7 @@
     -webkit-mask-image: url("/images/image-subtract.svg");
     mask-image: url("/images/image-subtract.svg");
 
-    mask-size: auto auto;
+    mask-size: 100% 100%;
     mask-repeat: no-repeat;
   }
 
@@ -137,16 +130,6 @@
       border-color: var(--foreground);
     }
   }
-}
-
-.works-background {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  transform: scaleY(0);
-  transform-origin: top;
-  background-image: radial-gradient(#200b01fa 1px, transparent 1px);
-  background-size: 25px 25px;
 }
 
 .sticky-container {
