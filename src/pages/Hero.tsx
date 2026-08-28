@@ -12,7 +12,7 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 760 });
 
   useGSAP(() => {
-    const heroSplit = new SplitText(".hero", { type: "lines" });
+    const heroSplit = new SplitText(".reveal-text", { type: "lines" });
 
     const heroTrigger = gsap.timeline({
       scrollTrigger: {
@@ -66,15 +66,15 @@ const Hero = () => {
       >
         <div className="flex justify-between items-start ">
           <div className="flex max-md:flex-col md:gap-2 md:items-center justify-center">
-            <p className="max-md:text-[14px] font-semibold leading-[1.43] text-white">
+            <p className="reveal-text max-md:text-[14px] font-semibold leading-[1.43] text-white">
               Esther Orieji
             </p>
-            <p className="max-md:text-[12px] font-normal leading-[1.33] text-gray-400">
+            <p className="reveal-text max-md:text-[12px] font-normal leading-[1.33] text-gray-400">
               Frontend Engineer
             </p>
           </div>
-          <div>
-            <p className="text-[12px] leading-[1.33]  inline-flex justify-center items-center gap-1.5 text-white">
+          <div className="reveal-text">
+            <p className=" text-[12px] leading-[1.33]  inline-flex justify-center items-center gap-1.5 text-white">
               Contact me{" "}
               <span>
                 {" "}
@@ -85,7 +85,7 @@ const Hero = () => {
         </div>
 
         <div className="py-10 md:w-2/3">
-          <h1 className="leading-[1.05] tracking-tight font-playfair heading-h1 text-white">
+          <h1 className="reveal-text leading-[1.05] tracking-tight font-playfair heading-h1 text-white">
             Building <span className="text-primary">design-led</span> digital
             products
             <span className="inline-flex items-center justify-center ml-2 ">
