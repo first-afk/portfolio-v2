@@ -158,8 +158,14 @@ const Works = () => {
             <p className=" text-primary/70 tracking-wide leading-[1.33]">
               I build interfaces that fits your vision
             </p>
-            <div className="rounded-full bg-primary p-4 tracking-wider uppercase leading-[1.43] font-medium w-fit mt-5 mb-4">
-              Send a message
+            <div className=" relative rounded-full bg-primary p-4 tracking-wider uppercase leading-[1.43] font-medium w-fit mt-5 mb-4">
+              <a
+                href="mailto:oriejiestherr@gmail.com"
+                rel="noopener noreferrer"
+                className=""
+              >
+                Send a message
+              </a>
             </div>
           </div>
           <div className="hidden md:flex absolute items-center justify-center right-10 bottom-10 -rotate-8 -translate-x-0.5 -translate-y-3 shadow-xl shadow-black/60">
@@ -174,9 +180,11 @@ const Works = () => {
           </div>
           <div className="copyright">
             <hr className="bg-primary/10 w-full h-0.5" />
-            <div className="flex max-md:flex-col items-start justify-start gap-4 p-3 text-primary">
+            <div className="flex max-md:justify-between max-md:items-center w-3/4 gap-4 p-3 text-primary">
               <a
                 href="https://github.com/first-afk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-end justify-center gap-3"
               >
                 <GitPullRequest className="size-5 rounded-sm" />{" "}
@@ -184,13 +192,23 @@ const Works = () => {
                   Github
                 </span>
               </a>
-              <a href="" className="inline-flex items-end justify-center gap-3">
+              <a
+                href="https://linkedin.com/in/esther-orieji-8373b1274"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-end justify-center gap-3"
+              >
                 <MailBadge className="size-5 rounded-sm" />{" "}
                 <span className="text-xs opacity-50 leading-[1.33]">
                   LinkedIn
                 </span>
               </a>
-              <a href="" className="inline-flex items-end justify-center gap-3">
+              <a
+                href="mailto:oriejiestherr@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-end justify-center gap-3"
+              >
                 <MailPlus className="size-5 rounded-sm" />{" "}
                 <span className="text-xs opacity-50 leading-[1.33]">Mail</span>
               </a>

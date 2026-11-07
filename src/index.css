@@ -19,7 +19,9 @@
 }
 @layer base {
   html {
-    @apply scroll-smooth;
+    /* @apply scroll-smooth; */
+    scrollbar-width: none;
+    scrollbar-color: #888888 #f1f1f1;
   }
 
   body {
