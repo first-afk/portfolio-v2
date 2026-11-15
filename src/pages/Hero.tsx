@@ -106,6 +106,7 @@ const Hero = () => {
           className="absolute inset-0 z-0 h-dvh w-full object-cover"
           muted
           playsInline
+          webkit-playsinline
           preload="auto"
           poster="/images/lofi_meadow.jpg"
         >
