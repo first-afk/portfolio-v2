@@ -34,6 +34,18 @@ const Hero = () => {
 
     const video = videoRef.current;
     if (!video) return;
+    // unlock video decoder on IOS safari
+    const unlockIOSVideo = () => {
+      video
+        ?.play()
+        .then(() => {
+          video?.pause();
+        })
+        .catch(() => {});
+      window.removeEventListener("touchstart", unlockIOSVideo);
+    };
+    window.addEventListener("touchstart", unlockIOSVideo);
+
     const endvalue = isMobile ? "120% top" : "bottom top";
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -100,10 +112,10 @@ const Hero = () => {
           <Carousel />
         </div>
       </section>
-      <div className="video absolute inset-0 z-0">
+      <div className="video relative w-full h-dvh">
         <video
           ref={videoRef}
-          className="absolute inset-0 z-0 h-dvh w-full object-cover"
+          className="fixed inset-0 z-1 h-dvh w-full object-cover pointer-events-none"
           muted
           playsInline
           preload="auto"
