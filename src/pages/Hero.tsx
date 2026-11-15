@@ -62,7 +62,7 @@ const Hero = () => {
       <section
         ref={heroRef}
         id="hero"
-        className="hero relative z-10 min-h-dvh w-full border border-transparent px-10 py-10 space-y-5 "
+        className="hero relative z-10 min-h-dvh w-full border border-transparent px-10 py-10 space-y-5 mx-auto"
       >
         <div className="flex justify-between items-start ">
           <div className="flex max-md:flex-col md:gap-2 md:items-center justify-center">
@@ -107,6 +107,7 @@ const Hero = () => {
           muted
           playsInline
           preload="auto"
+          poster="/images/lofi_meadow.jpg"
         >
           <source
             src="/videos/meadow-mobile.mp4"

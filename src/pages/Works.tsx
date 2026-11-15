@@ -37,7 +37,7 @@ const Works = () => {
     <section
       id="works"
       ref={worksRef}
-      className="relative z-20 flex min-h-dvh flex-col"
+      className="relative z-20 flex min-h-dvh flex-col mx-auto"
     >
       <h1
         className={`font-mono whitespace-nowrap overflow-hidden border-r-2 w-0 tracking-wider h-fit px-10 mt-8 z-10 title`}
