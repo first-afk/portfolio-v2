@@ -13,6 +13,7 @@ const Hero = () => {
 
   useGSAP(() => {
     const heroSplit = new SplitText(".reveal-text", { type: "lines" });
+    const carousel = heroRef.current?.querySelector(".carousel-fade");
 
     const heroTrigger = gsap.timeline({
       scrollTrigger: {
@@ -31,6 +32,19 @@ const Hero = () => {
       delay: 0.8,
       duration: 2,
     });
+
+    if (carousel) {
+      heroTrigger.to(
+        carousel,
+        {
+          opacity: 0,
+          yPercent: -15,
+          ease: "expo.out",
+          duration: 2,
+        },
+        0.8,
+      );
+    }
 
     const video = videoRef.current;
     if (!video) return;
@@ -74,9 +88,9 @@ const Hero = () => {
       <section
         ref={heroRef}
         id="hero"
-        className="hero relative z-10 min-h-dvh w-full border border-transparent px-10 py-10 space-y-5 mx-auto"
+        className="hero relative z-10 min-h-dvh w-full border border-transparent px-10 py-10 space-y-5 mx-auto grid grid-rows-[auto_1fr_auto]"
       >
-        <div className="flex justify-between items-start ">
+        <div className="flex justify-between items-start">
           <div className="flex max-md:flex-col md:gap-2 md:items-center justify-center">
             <p className="reveal-text max-md:text-[14px] font-semibold leading-[1.43] text-white">
               Esther Orieji
@@ -96,7 +110,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="py-10 md:w-2/3">
+        <div className="md:w-2/3 py-10">
           <h1 className="reveal-text leading-[1.05] tracking-tight font-playfair heading-h1 text-white">
             Building <span className="text-primary">design-led</span> digital
             products
@@ -108,7 +122,7 @@ const Hero = () => {
           </h1>
         </div>
 
-        <div className="md:mt-36 mt-15">
+        <div className="md:mt-36 mt-15 carousel-fade">
           <Carousel />
         </div>
       </section>
